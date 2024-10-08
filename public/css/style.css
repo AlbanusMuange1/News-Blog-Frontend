@@ -1,15 +1,13 @@
-/*
-Template Name: NewsFeed
-Template URI: http://www.wpfreeware.com/newsfeed-ultra-responsive-news-magazine-theme/
-Author: WpFreeware
-Author URI: http://www.wpfreeware.com
-Description: A Pro bootstrap html5 css3 responsive news magazine website template
-Version: 1.0 
-License: GPL
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+body {
+  padding: 0px 100px 0px 100px;
+  margin: 0 auto;  
+}
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
 
-body{background:#f5f5f5}
 ul{padding:0; margin:0; list-style:none}
 a{text-decoration:none; color:#2f2f2f}
 a:hover{color:#646464; text-decoration:none}
@@ -82,6 +80,133 @@ img:hover{opacity:0.75}
 #newsSection{float:left; display:inline; width:100%; padding:0 30px; background-color:#fff; padding-bottom:20px}
 .latest_newsarea{float:left; display:inline; width:100%; background-color:#000; position:relative}
 .latest_newsarea span{ color:#fff; font-family:Oswald,sans-serif; font-size:15px; left:0; line-height:1.8em; margin-right:20px; overflow:hidden; padding:2px 18px 1px 19px; position:absolute; z-index:15}
+/* Container for the ticker with overflow hidden */
+.latest_newsarea {
+  position: relative;
+  overflow: hidden; /* Hide anything outside this container */
+  width: 100%;
+  height: 30px; /* Adjust as needed */
+}
+
+/* Ticker Styles */
+#ticker01 {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  left: 100%; /* Start outside from the right */
+  transition: transform 0.5s ease-out; /* Optional for smooth effect */
+}
+
+#ticker01 li {
+  display: inline-block;
+  padding: 0 20px; /* Space between items */
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+/* Optional: Style for images in the ticker */
+#ticker01 img {
+  width: 40px; /* Adjust size of images */
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Slider container */
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide anything that overflows */
+}
+
+/* Slider content */
+.slider-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  width: 200%; /* Adjust this based on the number of slides */
+}
+
+/* Individual slider item */
+.single_iteam {
+  min-width: 100%; /* Each slide takes up the full width */
+  box-sizing: border-box;
+}
+
+.single_iteam img {
+  width: 100%;
+  height: auto;
+}
+
+/* Previous and Next buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Latest Post container */
+.latest_post {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden; /* Hide overflowing news items */
+}
+
+.latest_post_container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Latest Post container (no changes to existing layout) */
+.latest_post_container {
+  overflow: hidden; /* Keep this to hide overflow during the scroll */
+  position: relative;
+}
+
+/* Only the animation for upward scrolling */
+.latest_postnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.5s ease-in-out; /* Smooth scroll transition */
+}
+
+/* Each news item should maintain its default styling */
+.latest_postnav li {
+  padding: 10px 0;
+  height: 100px; /* Ensure each item has a consistent height */
+}
+
+.media img {
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.catg_title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
 .social_area{ position:absolute; right:0; top:0; background:#fff; border-top:1px solid #ccc; border-bottom:1px solid #ccc; border-right:1px solid #ccc; height:31px}
 .social_nav{ text-align:right}
 .social_nav li{ display:block; float:left}
@@ -153,7 +278,7 @@ img:hover{opacity:0.75}
 .photograph_nav{margin-left:-11px}
 .photograph_nav li{display:block; float:left; margin-left:9px; width:32%}
 .photo_grid figure{position:relative; float:left; overflow:hidden; margin:10px 1%; margin-top:0; height:150px; width:100%; background:#3085a3; text-align:center; cursor:pointer}
-.photo_grid figure img{position:relative; display:block; min-height:100%; max-width:100%; width:100%; height:100% opacity:0.8}
+.photo_grid figure img{position:relative; display:block; min-height:100%; max-width:100%; width:100%; height:100%; opacity:0.8}
 .photo_grid figure figcaption{padding:2em; color:#fff; text-transform:uppercase; font-size:1.25em; -webkit-backface-visibility:hidden; backface-visibility:hidden}
 .photo_grid figure figcaption::before, .photo_grid figure figcaption::after{pointer-events:none}
 .photo_grid figure figcaption{position:absolute; bottom:0; left:0; width:100%; height:100%}
@@ -270,7 +395,7 @@ figure.effect-layla:hover figcaption::after, figure.effect-layla:hover h2, figur
 .contact_form input[type="text"], .contact_form input[type="email"], .contact_form textarea{border-radius:0; margin-bottom:30px}
 .contact_form input[type="submit"]{border:medium none; color:#fff; height:35px; padding:5px 10px; -webkit-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .contact_form input[type="submit"]:hover{border:1px solid #d083cf}
-@media(max-width:1199px ){.logo_area{width:34%}.add_banner{width:580px}.nav-tabs > li{width:32.3%}.photograph_nav li{width:31.5%}
+@media(max-width:1199px ){.logo_area{width:34%}.add_banner{width:580px}.nav-tabs > li{width:32.3%}.photograph_nav li{width:31.5%}}
 @media(max-width:991px ){.add_banner{display:none}.logo_area{width:100%}.nav > li > a{padding:8px 8px}.latest_post_container{height:380px;overflow:hidden}#next-button{bottom:-2px}.single_iteam{height:415px}.photograph_nav li{width:47.7%}.related_post .spost_nav li{width:100%}.nav-tabs > li{width:31.9%}.nav-tabs > li > a{font-size:13px;padding-left:0 !important;padding-right:0 !important;text-align:center}}
 @media(max-width:767px ){.navbar-collapse{padding-left:15px}.mobile-show{display:block}.desktop-home{display:none}.navbar-inverse .navbar-nav > li > a{display:block}.header_top_left{width:100%}.header_top_right > p{display:none}.social_area{display:none}.single_iteam a{height:100%}.single_iteam a > img{height:100%}.error_page > a{margin-bottom:25px}.nav-tabs > li{width:32.6%}}
 @media(max-width:480px ){.top_nav{text-align:center}.single_post_content_left{width:100%}.single_post_content_right{width:100%}.fashion{width:100%}.technology{width:100%}.copyright{text-align:center;width:100%}.developer{text-align:center;width:100%}.single_iteam{height:300px}.photo_grid figure{height:200px}.photograph_nav li{width:100%;margin-left:0}.nav > li > a{padding:8px 12px}.nav-tabs > li{width:32.6%}}

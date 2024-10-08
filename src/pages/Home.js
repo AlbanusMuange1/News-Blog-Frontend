@@ -1,123 +1,22 @@
 import React from 'react';
+import SliderHighlights from '../components/SliderHighlights';
+import Slider from '../components/Slider';
+import LatestPost from '../components/LatestPost'; 
 
-const Home = () => {
+const Home = () => { 
   return (
     <div>
-      {/* News Section */}
-      <section id="newsSection">
-        <div className="row">
-          <div className="col-lg-12 col-md-12">
-            <div className="latest_newsarea">
-              <span>Latest News</span>
-              <ul id="ticker01" className="news_sticker">
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My First News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Second News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Third News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Four News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Five News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Six News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Seven News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail3.jpg`} alt=""/>My Eight News Item</a></li>
-                <li><a href="#"><img src={`${process.env.PUBLIC_URL}/assets/images/news_thumbnail2.jpg`} alt=""/>My Nine News Item</a></li>
-              </ul>
-              <div className="social_area">
-                <ul className="social_nav">
-                  <li className="facebook"><a href="#"></a></li>
-                  <li className="twitter"><a href="#"></a></li>
-                  <li className="flickr"><a href="#"></a></li>
-                  <li className="pinterest"><a href="#"></a></li>
-                  <li className="googleplus"><a href="#"></a></li>
-                  <li className="vimeo"><a href="#"></a></li>
-                  <li className="youtube"><a href="#"></a></li>
-                  <li className="mail"><a href="#"></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* News Highlight Section */}
+      <SliderHighlights />
 
       {/* Slider Section */}
       <section id="sliderSection">
         <div className="row">
-          <div className="col-lg-8 col-md-8 col-sm-8">
-            <div className="slick_slider">
-              <div className="single_iteam">
-                <a href="pages/single_page.html"><img src={`${process.env.PUBLIC_URL}/assets/images/slider_img4.jpg`} alt=""/></a>
-                <div className="slider_article">
-                  <h2><a className="slider_tittle" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
-                  <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris.</p>
-                </div>
-              </div>
-              <div className="single_iteam">
-                <a href="pages/single_page.html"><img src={`${process.env.PUBLIC_URL}/assets/images/slider_img2.jpg`} alt=""/></a>
-                <div className="slider_article">
-                  <h2><a className="slider_tittle" href="pages/single_page.html">Fusce eu nulla semper porttitor felis sit amet</a></h2>
-                  <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Slider />
 
           {/* Latest Posts */}
           <div className="col-lg-4 col-md-4 col-sm-4">
-            <div className="latest_post">
-              <h2><span>Latest post</span></h2>
-              <div className="latest_post_container">
-                <div id="prev-button"><i className="fa fa-chevron-up"></i></div>
-                <ul className="latest_postnav">
-                  <li>
-                    <div className="media">
-                      <a href="pages/single_page.html" className="media-left">
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img1.jpg`}/>
-                      </a>
-                      <div className="media-body">
-                        <a href="pages/single_page.html" className="catg_title">Aliquam malesuada diam eget turpis varius 1</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="media"> 
-                      <a href="pages/single_page.html" className="media-left"> 
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img1.jpg`}/> </a>
-                      <div className="media-body"> 
-                        <a href="pages/single_page.html" className="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> 
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="media"> 
-                      <a href="pages/single_page.html" className="media-left"> 
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img1.jpg`}/> 
-                      </a>
-                      <div className="media-body"> 
-                        <a href="pages/single_page.html" className="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> 
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="media"> 
-                      <a href="pages/single_page.html" class="media-left"> 
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img1.jpg`}/> </a>
-                      <div className="media-body"> 
-                        <a href="pages/single_page.html" className="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> 
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="media"> 
-                      <a href="pages/single_page.html" className="media-left"> 
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img1.jpg`}/> 
-                      </a>
-                      <div className="media-body"> 
-                        <a href="pages/single_page.html" className="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> 
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <div id="next-button"><i className="fa fa-chevron-down"></i></div>
-              </div>
-            </div>
+            <LatestPost />
           </div>
         </div>
       </section>
@@ -223,7 +122,7 @@ const Home = () => {
                   <li>
                     <div className="media wow fadeInDown"> 
                       <a href="pages/single_page.html" className="media-left"> 
-                        <img alt="" src={`${process.env.PUBLIC_URL}/assetsimages/post_img2.jpg`}/> 
+                        <img alt="" src={`${process.env.PUBLIC_URL}/assets/images/post_img2.jpg`}/> 
                       </a>
                       <div className="media-body"> 
                         <a href="pages/single_page.html" className="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> 
