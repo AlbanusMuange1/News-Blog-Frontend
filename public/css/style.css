@@ -1,12 +1,49 @@
 body {
-  padding: 0px 100px 0px 100px;
-  margin: 0 auto;  
+  background:#f5f5f5;
 }
-@media only screen and (max-width: 768px) {
-  body {
-    padding: 0;
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
   }
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
 
 ul{padding:0; margin:0; list-style:none}
 a{text-decoration:none; color:#2f2f2f}
@@ -206,6 +243,52 @@ img:hover{opacity:0.75}
   font-weight: bold;
   color: #333;
 }
+
+.photo_grid {
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-layla img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease-in-out;
+}
+
+.effect-layla:hover img {
+  transform: scale(1.1); /* Image zoom effect on hover */
+}
+
+.effect-layla figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Adjust this to control the height of the overlay */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.effect-layla:hover figcaption {
+  opacity: 1; /* Show title on hover */
+}
+
+.image-title {
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+/* Most Popular  */
+
 
 .social_area{ position:absolute; right:0; top:0; background:#fff; border-top:1px solid #ccc; border-bottom:1px solid #ccc; border-right:1px solid #ccc; height:31px}
 .social_nav{ text-align:right}

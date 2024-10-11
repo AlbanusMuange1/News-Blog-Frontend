@@ -1,59 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <section id="navArea">
-      <nav className="navbar navbar-inverse" role="navigation">
-        <div className="navbar-header">
-          <button 
-            type="button" 
-            className="navbar-toggle collapsed" 
-            data-toggle="collapse" 
-            data-target="#navbar" 
-            aria-expanded="false" 
-            aria-controls="navbar"
-          >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar" className="navbar-collapse collapse">
-          <ul className="nav navbar-nav main_nav">
-            <li className="active">
-              <a href="index.html">
-                <span className="fa fa-home desktop-home"></span>
-                <span className="mobile-show">Home</span>
-              </a>
-            </li>
-            <li><a href="#">Technology</a></li>
-            <li className="dropdown">
-              <a 
-                href="#" 
-                className="dropdown-toggle" 
-                data-toggle="dropdown" 
-                role="button" 
-                aria-expanded="false"
+    <div className="container">
+        <section id="navArea">
+          <nav className="navbar navbar-inverse" role="navigation">
+            {/* <div className="navbar-header">
+              <button 
+                type="button" 
+                className="navbar-toggle collapsed" 
+                data-toggle="collapse" 
+                data-target="#navbar" 
+                aria-expanded="false" 
+                aria-controls="navbar"
               >
-                Mobile
-              </a>
-              <ul className="dropdown-menu" role="menu">
-                <li><a href="#">Android</a></li>
-                <li><a href="#">Samsung</a></li>
-                <li><a href="#">Nokia</a></li>
-                <li><a href="#">Walton Mobile</a></li>
-                <li><a href="#">Sympony</a></li>
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+            </div> */}
+            <div id="navbar" className="navbar-collapse collapse">
+              <ul className="nav navbar-nav main_nav">
+                <li className="active">
+                  <Link to="/">
+                    <span className="fa fa-home desktop-home"></span>
+                    <span className="mobile-show">Home</span>
+                  </Link>
+                </li>
+                <li><Link to="/politics">Politics</Link></li>
+                <li><Link to="/business">Business</Link></li>
+                <li><Link to="/lifestyle">Lifestyle & Society</Link></li>
+                <li><Link to="/technology">Technology</Link></li>
+                <li><Link to="/sports">Sports & Entertainment</Link></li>
               </ul>
-            </li>
-            <li><a href="#">Laptops</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="pages/contact.html">Contact Us</a></li>
-            <li><a href="pages/404.html">404 Page</a></li>
-          </ul>
-        </div>
-      </nav>
-    </section>
+            </div>
+          </nav>
+        </section>
+    </div>
   );
 };
 
